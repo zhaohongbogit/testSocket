@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             OkHttpClient client = new OkHttpClient.Builder().connectTimeout(30, TimeUnit.SECONDS)
                     .readTimeout(30, TimeUnit.SECONDS).build();
             SocketFactory factory = client.socketFactory();
+            //TODO 需要写ServerSocket服务才能测试
             Socket socket = factory.createSocket("192.168.204.86", 8888);
             socket.setKeepAlive(true);
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
